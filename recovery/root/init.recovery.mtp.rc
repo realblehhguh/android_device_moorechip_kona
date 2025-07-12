@@ -1,0 +1,43 @@
+# MTP (Media Transfer Protocol) configuration for TWRP recovery
+# This file handles MTP service for file transfer in recovery mode
+
+on init
+    # Create MTP directories
+    mkdir /mnt/media_rw 0700 media_rw media_rw
+    mkdir /storage 0751 root sdcard_r
+    
+    # Set up MTP device permissions
+    chmod 0660 /dev/mtp_usb
+    chown root mtp /dev/mtp_usb
+
+on property:sys.usb.config=mtp && property:sys.usb.configfs=1
+    start mtp
+
+on property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1
+    start mtp
+
+service mtp /system/bin/mtpd
+    class late_start
+    user mtp
+    group mtp audio_rw sdcard_rw everybody 1015 1023
+    disabled
+    oneshot
+    seclabel u:r:mtp:s0
+
+# Alternative MTP service for devices that use different MTP daemon
+service mtpd /system/bin/mtpd
+    class late_start
+    user mtp
+    group mtp audio_rw sdcard_rw everybody 1015 1023
+    disabled
+    oneshot
+    seclabel u:r:mtp:s0
+
+# TWRP MTP service - uses TWRP's built-in MTP
+service twrp-mtp /sbin/mtp
+    class late_start
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0

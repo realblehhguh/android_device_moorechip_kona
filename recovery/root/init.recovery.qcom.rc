@@ -26,6 +26,8 @@
 #
 
 import /init.recovery.qcom_decrypt.rc
+import /init.recovery.usb.rc
+import /init.recovery.mtp.rc
 
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200
@@ -94,19 +96,19 @@ service servicemanager /system/bin/servicemanager
     writepid /dev/cpuset/system-background/tasks
     shutdown critical
 
-service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service-qti
+service keymaster-4-0 /vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
     user root
     group root drmrpc
     disabled
     seclabel u:recovery:s0
 
-service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service-qti
+service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
     user root
     group root
     disabled
     seclabel u:recovery:s0
 
-service qseecomd /system/bin/qseecomd
+service qseecomd /vendor/bin/qseecomd
     user root
     group root
     disabled
