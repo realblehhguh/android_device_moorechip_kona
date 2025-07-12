@@ -28,6 +28,7 @@
 import /init.recovery.qcom_decrypt.rc
 import /init.recovery.usb.rc
 import /init.recovery.mtp.rc
+import /init.recovery.fastbootd.rc
 
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200

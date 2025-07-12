@@ -6,9 +6,15 @@ on init
     mkdir /mnt/media_rw 0700 media_rw media_rw
     mkdir /storage 0751 root sdcard_r
     
-    # Set up MTP device permissions
+    # Create MTP device node if it doesn't exist
+    mknod /dev/mtp_usb c 180 0
     chmod 0660 /dev/mtp_usb
     chown root mtp /dev/mtp_usb
+    
+    # Create additional MTP-related device nodes
+    mknod /dev/usb_accessory c 10 61
+    chmod 0660 /dev/usb_accessory
+    chown root usb /dev/usb_accessory
 
 on property:sys.usb.config=mtp && property:sys.usb.configfs=1
     start mtp
