@@ -126,3 +126,5 @@ TW_HAS_EDL_MODE := true
 TW_INCLUDE_FASTBOOTD := true
 TW_INCLUDE_MTP := true
 TW_CRYPTO_PWTYPE := pin,pattern,password
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_FBE := true
