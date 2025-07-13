@@ -412,6 +412,7 @@ cc_prebuilt_library_shared {
     compile_multilib: "both",
     check_elf_files: false,
     vendor: true,
+}
 
 cc_prebuilt_library_shared {
     name: "libmm-omxcore",
@@ -582,5 +583,4 @@ cc_prebuilt_library_shared {
     compile_multilib: "both",
     check_elf_files: false,
     vendor: true,
-}
 }
