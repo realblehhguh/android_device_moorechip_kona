@@ -126,6 +126,7 @@ TW_HAS_EDL_MODE := true
 TW_INCLUDE_FASTBOOTD := true
 <<<<<<< HEAD
 TW_INCLUDE_MTP := true
+<<<<<<< HEAD
 TW_CRYPTO_PWTYPE := pin,pattern,password
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
@@ -135,3 +136,6 @@ TW_USE_AB := true
 =======
 TW_INCLUDE_MTP := true
 >>>>>>> parent of 06daeaa (can unlock with pw)
+=======
+TW_CRYPTO_PWTYPE := pin,pattern,password
+>>>>>>> parent of e6df109 (cleanup blobs and add FBE/Crypto flags)
