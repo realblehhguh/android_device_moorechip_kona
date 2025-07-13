@@ -128,3 +128,6 @@ TW_INCLUDE_MTP := true
 TW_CRYPTO_PWTYPE := pin,pattern,password
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
+TW_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
+TW_USE_AB := true
