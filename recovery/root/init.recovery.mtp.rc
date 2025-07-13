@@ -16,43 +16,9 @@ on init
     chmod 0660 /dev/usb_accessory
     chown root usb /dev/usb_accessory
     
-    # Create FFS directories for MTP
-    mkdir -p /dev/usb-ffs/mtp 0770 mtp mtp
-    chmod 0770 /dev/usb-ffs/mtp
-    chown mtp mtp /dev/usb-ffs/mtp
-    
     # Set up storage directories for MTP
     mkdir -p /storage/emulated 0755 root root
     mkdir -p /storage/self 0755 root root
 
-on property:sys.usb.config=mtp && property:sys.usb.configfs=1
-    start mtp
-
-on property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1
-    start mtp
-
-service mtp /system/bin/mtpd
-    class late_start
-    user mtp
-    group mtp audio_rw sdcard_rw everybody 1015 1023
-    disabled
-    oneshot
-    seclabel u:r:mtp:s0
-
-# Alternative MTP service for devices that use different MTP daemon
-service mtpd /system/bin/mtpd
-    class late_start
-    user mtp
-    group mtp audio_rw sdcard_rw everybody 1015 1023
-    disabled
-    oneshot
-    seclabel u:r:mtp:s0
-
-# TWRP MTP service - uses TWRP's built-in MTP
-service twrp-mtp /sbin/mtp
-    class late_start
-    user root
-    group root
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
+# TWRP handles MTP internally - no external service needed
+# MTP is controlled directly by TWRP UI

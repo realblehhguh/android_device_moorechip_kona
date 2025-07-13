@@ -28,6 +28,7 @@
 import /init.recovery.qcom_decrypt.rc
 import /init.recovery.usb.rc
 import /init.recovery.mtp.rc
+import /init.recovery.twrp.rc
 import /init.recovery.fastbootd.rc
 
 on init
@@ -51,6 +52,9 @@ on init
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
     write /sys/class/udc/${ro.boot.usbcontroller}/device/../mode peripheral
+    # Enable MTP support
+    setprop sys.usb.configfs 1
+    setprop persist.vendor.mtp.enable 1
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
