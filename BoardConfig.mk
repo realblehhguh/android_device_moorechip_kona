@@ -125,3 +125,4 @@ TW_INCLUDE_NTFS_3G := true
 TW_HAS_EDL_MODE := true
 TW_INCLUDE_FASTBOOTD := true
 TW_INCLUDE_MTP := true
+TW_CRYPTO_PWTYPE := pin,pattern,password
