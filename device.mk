@@ -34,11 +34,7 @@ PRODUCT_PACKAGES += \
     update_verifier \
     update_engine_sideload
 
-# Crypto and Decryption - Using vendor blobs
-PRODUCT_PACKAGES += \
-    qseecomd \
-    android.hardware.keymaster@4.0-service-qti \
-    android.hardware.gatekeeper@1.0-service-qti
+# Crypto and Decryption - Using vendor blobs (defined in vendor blobs)
 
 # Include vendor blobs locally
 $(call inherit-product, device/moorechip/kona/vendor-blobs.mk)

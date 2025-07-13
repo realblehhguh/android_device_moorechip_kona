@@ -7,11 +7,11 @@
 
 LOCAL_PATH := device/moorechip/kona
 
-# Essential decryption binaries
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/vendor/moorechip/kona/proprietary/bin/qseecomd:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/bin/qseecomd \
-    $(LOCAL_PATH)/vendor/moorechip/kona/proprietary/bin/hw/android.hardware.keymaster@4.0-service-qti:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/bin/hw/android.hardware.keymaster@4.0-service-qti \
-    $(LOCAL_PATH)/vendor/moorechip/kona/proprietary/bin/hw/android.hardware.gatekeeper@1.0-service-qti:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
+# Essential decryption binaries - using prebuilt modules
+PRODUCT_PACKAGES += \
+    qseecomd \
+    android.hardware.keymaster@4.0-service-qti \
+    android.hardware.gatekeeper@1.0-service-qti
 
 # Essential crypto libraries
 PRODUCT_COPY_FILES += \

@@ -7,6 +7,19 @@
 PRODUCT_SOONG_NAMESPACES += \
     vendor/moorechip/kona
 
+PRODUCT_PACKAGES += \
+    qseecomd \
+    thermal-engine \
+    time_daemon \
+    android.hardware.bluetooth@1.0-service-qti \
+    android.hardware.camera.provider@2.4-service_64 \
+    android.hardware.drm@1.3-service.clearkey \
+    android.hardware.gatekeeper@1.0-service-qti \
+    android.hardware.keymaster@4.0-service-qti \
+    android.hardware.sensors@2.0-service.multihal \
+    android.hardware.thermal@2.0-service.qti \
+    android.hardware.wifi@1.0-service
+
 PRODUCT_COPY_FILES += \
     vendor/moorechip/kona/proprietary/lib/hw/audio.primary.kona.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/audio.primary.kona.so \
     vendor/moorechip/kona/proprietary/lib64/hw/audio.primary.kona.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/audio.primary.kona.so \
@@ -55,17 +68,6 @@ PRODUCT_COPY_FILES += \
     vendor/moorechip/kona/proprietary/firmware/a650_gmu.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/a650_gmu.bin \
     vendor/moorechip/kona/proprietary/firmware/a650_sqe.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/a650_sqe.fw \
     vendor/moorechip/kona/proprietary/firmware/slpi.mdt:$(TARGET_COPY_OUT_VENDOR)/firmware/slpi.mdt \
-    vendor/moorechip/kona/proprietary/bin/hw/android.hardware.bluetooth@1.0-service-qti:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.bluetooth@1.0-service-qti \
-    vendor/moorechip/kona/proprietary/bin/hw/android.hardware.camera.provider@2.4-service_64:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.camera.provider@2.4-service_64 \
-    vendor/moorechip/kona/proprietary/bin/hw/android.hardware.drm@1.3-service.clearkey:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.drm@1.3-service.clearkey \
-    vendor/moorechip/kona/proprietary/bin/hw/android.hardware.gatekeeper@1.0-service-qti:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.gatekeeper@1.0-service-qti \
-    vendor/moorechip/kona/proprietary/bin/hw/android.hardware.keymaster@4.0-service-qti:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.keymaster@4.0-service-qti \
-    vendor/moorechip/kona/proprietary/bin/hw/android.hardware.sensors@2.0-service.multihal:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.sensors@2.0-service.multihal \
-    vendor/moorechip/kona/proprietary/bin/hw/android.hardware.thermal@2.0-service.qti:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.thermal@2.0-service.qti \
-    vendor/moorechip/kona/proprietary/bin/hw/android.hardware.wifi@1.0-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.wifi@1.0-service \
-    vendor/moorechip/kona/proprietary/bin/qseecomd:$(TARGET_COPY_OUT_VENDOR)/bin/qseecomd \
-    vendor/moorechip/kona/proprietary/bin/thermal-engine:$(TARGET_COPY_OUT_VENDOR)/bin/thermal-engine \
-    vendor/moorechip/kona/proprietary/bin/time_daemon:$(TARGET_COPY_OUT_VENDOR)/bin/time_daemon \
     vendor/moorechip/kona/proprietary/etc/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     vendor/moorechip/kona/proprietary/etc/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
     vendor/moorechip/kona/proprietary/etc/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
