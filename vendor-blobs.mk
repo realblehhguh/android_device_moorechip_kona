@@ -13,23 +13,17 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service-qti \
     android.hardware.gatekeeper@1.0-service-qti
 
-# Essential crypto libraries
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/vendor/moorechip/kona/proprietary/lib/libdrmfs.so:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/libdrmfs.so \
-    $(LOCAL_PATH)/vendor/moorechip/kona/proprietary/lib64/libdrmfs.so:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib64/libdrmfs.so \
-    $(LOCAL_PATH)/vendor/moorechip/kona/proprietary/lib/libdrmtime.so:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/libdrmtime.so \
-    $(LOCAL_PATH)/vendor/moorechip/kona/proprietary/lib64/libdrmtime.so:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib64/libdrmtime.so \
-    $(LOCAL_PATH)/vendor/moorechip/kona/proprietary/lib/libqmi_cci.so:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/libqmi_cci.so \
-    $(LOCAL_PATH)/vendor/moorechip/kona/proprietary/lib64/libqmi_cci.so:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib64/libqmi_cci.so \
-    $(LOCAL_PATH)/vendor/moorechip/kona/proprietary/lib/libqmi_common_so.so:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/libqmi_common_so.so \
-    $(LOCAL_PATH)/vendor/moorechip/kona/proprietary/lib64/libqmi_common_so.so:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib64/libqmi_common_so.so
+# Essential crypto libraries - using prebuilt modules
+PRODUCT_PACKAGES += \
+    libdrmfs \
+    libdrmtime \
+    libqmi_cci \
+    libqmi_common_so
 
-# Essential GPU libraries for TWRP UI
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/vendor/moorechip/kona/proprietary/lib/egl/libEGL_adreno.so:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/egl/libEGL_adreno.so \
-    $(LOCAL_PATH)/vendor/moorechip/kona/proprietary/lib64/egl/libEGL_adreno.so:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib64/egl/libEGL_adreno.so \
-    $(LOCAL_PATH)/vendor/moorechip/kona/proprietary/lib/egl/libGLESv2_adreno.so:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/egl/libGLESv2_adreno.so \
-    $(LOCAL_PATH)/vendor/moorechip/kona/proprietary/lib64/egl/libGLESv2_adreno.so:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib64/egl/libGLESv2_adreno.so
+# Essential GPU libraries for TWRP UI - using prebuilt modules
+PRODUCT_PACKAGES += \
+    libEGL_adreno \
+    libGLESv2_adreno
 
 # GPU firmware
 PRODUCT_COPY_FILES += \

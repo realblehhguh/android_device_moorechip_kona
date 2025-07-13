@@ -33,7 +33,7 @@ import /init.recovery.fastbootd.rc
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200
     setprop sys.usb.configfs 1
-    
+    setprop prepdecrypt.loglevel 2
     # Enable vibrator/haptics - QTI haptics on event2
     chmod 0664 /dev/input/event2
     chmod 0664 /sys/class/leds/vibrator/activate

@@ -34,6 +34,9 @@ PRODUCT_PACKAGES += \
     update_verifier \
     update_engine_sideload
 
+PRODUCT_PACKAGES += \
+    qcom_decrypt \
+    qcom_decrypt_fbe
 # Crypto and Decryption - Using vendor blobs (defined in vendor blobs)
 
 # Include vendor blobs locally
