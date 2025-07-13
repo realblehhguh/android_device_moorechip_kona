@@ -46,6 +46,5 @@
 /misc           emmc      /dev/block/bootdevice/by-name/misc              flags=display=misc
 
 # Storage
-/sdcard         vfat      /dev/block/mmcblk0p1                            flags=display=sdcard;storage;wipeingui;removable
 /external_sd    vfat      /dev/block/mmcblk0p1                            flags=display="External SD";storage;wipeingui;removable
 /usb_otg        vfat      /dev/block/sdg1                                 flags=display="USB OTG";storage;wipeingui;removable
