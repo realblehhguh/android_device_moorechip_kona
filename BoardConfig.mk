@@ -124,6 +124,7 @@ TW_USE_NEW_MINADBD := true
 TW_INCLUDE_NTFS_3G := true
 TW_HAS_EDL_MODE := true
 TW_INCLUDE_FASTBOOTD := true
+<<<<<<< HEAD
 TW_INCLUDE_MTP := true
 TW_CRYPTO_PWTYPE := pin,pattern,password
 TW_INCLUDE_CRYPTO := true
@@ -131,3 +132,6 @@ TW_INCLUDE_FBE := true
 TW_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TW_USE_AB := true
+=======
+TW_INCLUDE_MTP := true
+>>>>>>> parent of 06daeaa (can unlock with pw)
