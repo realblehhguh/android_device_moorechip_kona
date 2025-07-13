@@ -15,6 +15,9 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Inherit from kona device
 $(call inherit-product, device/moorechip/kona/device.mk)
 
+# Include vendor blobs for TWRP
+$(call inherit-product, vendor/moorechip/kona/proprietary-files.mk)
+
 PRODUCT_DEVICE := kona
 PRODUCT_NAME := twrp_kona
 PRODUCT_BRAND := qti
