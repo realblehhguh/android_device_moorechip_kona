@@ -40,8 +40,8 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service-qti \
     android.hardware.gatekeeper@1.0-service-qti
 
-# Include vendor blobs
-$(call inherit-product, vendor/moorechip/kona/proprietary-files.mk)
+# Include vendor blobs locally
+$(call inherit-product, device/moorechip/kona/vendor-blobs.mk)
 
 
 
