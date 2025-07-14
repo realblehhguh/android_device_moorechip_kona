@@ -4,7 +4,7 @@
 
  - [x] Touch
  - [x] Power button (to lock)
- - [] Decryption
+ - [ ] Decryption
  - [x] Micro SD/USB-OTG
  - [ ] MTP
  - [ ] NANDroid backups/restore
