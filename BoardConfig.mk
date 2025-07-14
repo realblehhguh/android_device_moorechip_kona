@@ -136,6 +136,7 @@ TW_FORCE_FBE_GENERIC := true
 TW_KEYMASTER_VER := 3
 TW_VERBOSE_TRUE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
+TW_DEVICE_VERSION := Retroid Pocket 5 - Build by blehhguh
 # Vendor blob paths
 PRODUCT_VENDOR_MOVE_ENABLED := true
 TARGET_COPY_OUT_VENDOR := vendor
