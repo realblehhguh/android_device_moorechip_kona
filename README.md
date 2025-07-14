@@ -13,4 +13,4 @@
  - [x] ADB sideload
  - [x] Rebooting
  - [x] Saving logs to Micro SD/USB OTG
- - [ ] Flashing TWRPS
+ - [ ] Flashing TWRP
