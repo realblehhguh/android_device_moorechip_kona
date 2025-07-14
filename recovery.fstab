@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+=# Copyright (c) 2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -45,5 +45,5 @@
 /misc        emmc   /dev/block/bootdevice/by-name/misc       flags=display=Misc
 
 # External storage
-/external_sd vfat   /dev/block/mmcblk0p1  flags=display=Micro_SD,storage,wipeingui,removable
-/usb_otg     vfat   /dev/block/sdg1       flags=display=USB_OTG,storage,wipeingui,removable
+/external_sd vfat   /dev/block/mmcblk0p1  flags=display=Micro SD
+/usb_otg     vfat   /dev/block/sdg1       flags=display=USB OTG
