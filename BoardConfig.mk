@@ -126,7 +126,6 @@ TW_HAS_EDL_MODE := true
 TW_INCLUDE_FASTBOOTD := true
 TW_INCLUDE_MTP := true
 TW_MTP_DEVICE := "/config/usb_gadget/g1"
-TW_HAS_MTP := true
 TW_CRYPTO_PWTYPE := pin,pattern,password
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
