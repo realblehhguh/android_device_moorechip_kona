@@ -134,7 +134,6 @@ BOARD_USES_QCOM_HARDWARE := true
 TW_USE_FSCRYPT_POLICY := 2
 TW_FORCE_FBE_GENERIC := true
 TW_KEYMASTER_VER := 3
-TW_VERBOSE_TRUE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 TW_DEVICE_VERSION := Retroid Pocket 5 - Build by blehhguh
 # Vendor blob paths
