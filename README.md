@@ -1,37 +1,5 @@
 # TWRP Device Tree for Retroid Pocket 5
 
-<<<<<<< HEAD
- - [x] Touch
- - [x] Power button (to lock)
- - [ ] Decryption
- - [x] Micro SD/USB-OTG
- - [ ] MTP
- - [ ] NANDroid backups/restore
- - [ ] Zip file flashing
- - [ ] Img file flashing
- - [x] ADB sideload
- - [x] Rebooting
- - [x] Saving logs to Micro SD/USB OTG
- - [ ] Flashing TWRP
-
-# How to build 
-Visit  https://github.com/azwhikaru/Action-TWRP-Builder and fork and go to Actions and press the Run Workflow. Fill these options.
-
-Github Actions would be the easiest option.
-
-| Name                 | Description                                       | Example                                                      |
-| -------------------- | ------------------------------------------------- | ------------------------------------------------------------ |
-| `MANIFEST_URL`       | Source address (dont change)                                    | https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git |
-| `MANIFEST_BRANCH`    | Source branch (dont change)                                     | twrp-12.1                                                    |
-| `DEVICE_TREE_URL`    | Device address                                   |      https://github.com/TWRP-for-Retroid-Pocket-5/android_device_moorechip_kona
-| `DEVICE_TREE_BRANCH` | Device branch                                     | android-13                                                |
-| `DEVICE_PATH`        | Device location                                   | device/moorechip/kona                                            |
-| `COMMON_TREE_URL`    | Common tree address                               | leave empty |
-| `COMMON_PATH`        | Common tree location                              | leave empty                                   |
-| `DEVICE_NAME`        | Model name                                        | kona                                                        |
-| `MAKEFILE_NAME`      | Makefile name                                     | twrp_kona                                                   |
-| `BUILD_TARGET`       | Build Target Partition (boot/recovery/vendorboot) | boot                                                     |
-=======
 This repository contains the device tree for building TWRP (Team Win Recovery Project) for the **Retroid Pocket 5** gaming handheld device.
 
 ## Device Information
@@ -58,7 +26,30 @@ This repository contains the device tree for building TWRP (Team Win Recovery Pr
 
 ## Building TWRP
 
-### Prerequisites
+### Option 1: GitHub Actions (Recommended)
+
+The easiest way to build TWRP is using GitHub Actions:
+
+1. Visit https://github.com/azwhikaru/Action-TWRP-Builder and fork the repository
+2. Go to Actions and press "Run Workflow"
+3. Fill in these options:
+
+| Name                 | Description                                       | Value                                                      |
+| -------------------- | ------------------------------------------------- | ------------------------------------------------------------ |
+| `MANIFEST_URL`       | Source address (don't change)                    | https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git |
+| `MANIFEST_BRANCH`    | Source branch (don't change)                     | twrp-12.1                                                    |
+| `DEVICE_TREE_URL`    | Device address                                   | https://github.com/TWRP-for-Retroid-Pocket-5/android_device_moorechip_kona |
+| `DEVICE_TREE_BRANCH` | Device branch                                     | android-13                                                |
+| `DEVICE_PATH`        | Device location                                   | device/moorechip/kona                                            |
+| `COMMON_TREE_URL`    | Common tree address                               | leave empty |
+| `COMMON_PATH`        | Common tree location                              | leave empty                                   |
+| `DEVICE_NAME`        | Model name                                        | kona                                                        |
+| `MAKEFILE_NAME`      | Makefile name                                     | twrp_kona                                                   |
+| `BUILD_TARGET`       | Build Target Partition (boot/recovery/vendorboot) | boot                                                     |
+
+### Option 2: Local Build
+
+#### Prerequisites
 
 1. Set up Android build environment
 2. Initialize TWRP minimal manifest:
@@ -70,13 +61,13 @@ This repository contains the device tree for building TWRP (Team Win Recovery Pr
    repo sync
    ```
 
-### Clone Device Tree
+#### Clone Device Tree
 
 ```bash
-git clone https://github.com/your-username/android_device_moorechip_kona.git device/moorechip/kona
+git clone https://github.com/TWRP-for-Retroid-Pocket-5/android_device_moorechip_kona.git device/moorechip/kona
 ```
 
-### Build Commands
+#### Build Commands
 
 ```bash
 # Set up build environment
@@ -113,26 +104,27 @@ mka recoveryimage
 
 ## Testing Status
 
-Current testing checklist:
+Current testing status:
 
-- [ ] Touch input
-- [ ] Power button (screen lock)
-- [ ] Decryption (FBE)
-- [ ] Micro SD/USB-OTG support
-- [ ] MTP (Media Transfer Protocol)
+- [x] Touch input
+- [x] Power button (to lock)
+- [ ] Decryption
+- [x] Micro SD/USB-OTG
+- [ ] MTP
 - [ ] NANDroid backups/restore
 - [ ] ZIP file flashing
 - [ ] IMG file flashing
-- [ ] ADB sideload
-- [ ] Device rebooting
-- [ ] Log saving to external storage
-- [ ] TWRP self-flashing
+- [x] ADB sideload
+- [x] Rebooting
+- [x] Saving logs to Micro SD/USB OTG
+- [ ] Flashing TWRP
 
 ## Known Issues
 
-- Testing in progress - please report any issues you encounter
-- Decryption functionality may need additional testing
-- Some features may require further validation
+- Decryption functionality needs testing/fixes
+- MTP support requires verification
+- Backup/restore functionality needs validation
+- ZIP/IMG flashing needs testing
 
 ## Contributing
 
@@ -154,4 +146,3 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 ---
 
 **Disclaimer**: This is an unofficial TWRP build. Use at your own risk. Always ensure you have proper backups before flashing any custom recovery.
->>>>>>> 908a599 (Update README with comprehensive documentation)
