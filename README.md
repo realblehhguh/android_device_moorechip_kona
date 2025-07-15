@@ -1,6 +1,10 @@
 # TWRP Device Tree for Retroid Pocket 5
-
-This repository contains the device tree for building TWRP (Team Win Recovery Project) for the **Retroid Pocket 5** gaming handheld device.
+> [!IMPORTANT]
+> - This device uses A/B (Dynamic Partitions).
+> - MTP doesnt work.
+> - Unable to flash TWRP at the moment.
+> - Decryption doesnt work.
+> - FastbootD doesnt work.
 
 ## Device Information
 
@@ -12,17 +16,8 @@ This repository contains the device tree for building TWRP (Team Win Recovery Pr
 | **Brand** | qti |
 | **Architecture** | arm64 (with arm32 support) |
 | **Platform** | Qualcomm Snapdragon (kona) |
-| **Android Version** | 11 |
+| **Android Version** | 13 |
 | **Security Patch** | 2024-07-05 |
-
-## Features
-
-- **A/B Partition Support**: Full A/B OTA update support
-- **Encryption Support**: FBE (File-Based Encryption) with QCOM hardware decryption
-- **MTP Support**: Media Transfer Protocol for file transfers
-- **USB OTG**: External storage support
-- **Fastbootd**: Modern fastboot implementation
-- **Portrait Mode**: Optimized for handheld gaming device orientation (180° rotation)
 
 ## Building TWRP
 
@@ -114,30 +109,15 @@ Current testing status:
 - [ ] NANDroid backups/restore
 - [ ] ZIP file flashing
 - [ ] IMG file flashing
-- [x] ADB sideload
+- [ ] ADB sideload
 - [x] Rebooting
 - [x] Saving logs to Micro SD/USB OTG
 - [ ] Flashing TWRP
-
-## Known Issues
-
-- Decryption functionality needs testing/fixes
-- MTP support requires verification
-- Backup/restore functionality needs validation
-- ZIP/IMG flashing needs testing
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Test your changes thoroughly
-4. Submit a pull request with detailed description
 
 ## Credits
 
 - **SebaUbuntu's TWRP device tree generator** - Initial device tree generation
 - **TeamWin Recovery Project** - TWRP recovery
-- **moorechip** - Original device manufacturer
 
 ## License
 
