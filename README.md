@@ -16,7 +16,9 @@
  - [ ] Flashing TWRP
 
 # How to build 
-Visit  https://github.com/azwhikaru/Action-TWRP-Builder and fork and go to Actions and press the Run Workflow. Fill these options
+Visit  https://github.com/azwhikaru/Action-TWRP-Builder and fork and go to Actions and press the Run Workflow. Fill these options.
+
+Github Actions would be the easiest option.
 
 | Name                 | Description                                       | Example                                                      |
 | -------------------- | ------------------------------------------------- | ------------------------------------------------------------ |
@@ -25,7 +27,7 @@ Visit  https://github.com/azwhikaru/Action-TWRP-Builder and fork and go to Actio
 | `DEVICE_TREE_URL`    | Device address                                   |      https://github.com/TWRP-for-Retroid-Pocket-5/android_device_moorechip_kona
 | `DEVICE_TREE_BRANCH` | Device branch                                     | android-13                                                |
 | `DEVICE_PATH`        | Device location                                   | device/moorechip/kona                                            |
-| `COMMON_TREE_URL`    | Common tree address                               | leavy empty |
+| `COMMON_TREE_URL`    | Common tree address                               | leave empty |
 | `COMMON_PATH`        | Common tree location                              | leave empty                                   |
 | `DEVICE_NAME`        | Model name                                        | kona                                                        |
 | `MAKEFILE_NAME`      | Makefile name                                     | twrp_kona                                                   |
