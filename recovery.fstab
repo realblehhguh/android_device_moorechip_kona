@@ -1,17 +1,17 @@
 # mount point   fstype    device                                      flags
 # Logical Partitions (Dynamic Partitions)
-/system         ext4      /dev/block/mapper/system                                      flags=display="System";backup=1;logical;slotselect;avb=vbmeta_system
-/system_ext     ext4      /dev/block/mapper/system_ext                                  flags=display="System Ext";backup=1;logical;slotselect;avb=vbmeta_system
-/product        ext4      /dev/block/mapper/product                                     flags=display="Product";backup=1;logical;slotselect;avb=vbmeta_system
-/vendor         ext4      /dev/block/mapper/vendor                                     flags=display="Vendor";backup=1;logical;slotselect;avb
-/odm            ext4      /dev/block/mapper/odm                                         flags=display="ODM";backup=1;logical;slotselect;avb
+/system         ext4      /dev/block/mapper/system                    flags=display="System";backup=1;logical;slotselect
+/system_ext     ext4      /dev/block/mapper/system_ext                flags=display="System Ext";backup=1;logical;slotselect
+/product        ext4      /dev/block/mapper/product                   flags=display="Product";backup=1;logical;slotselect
+/vendor         ext4      /dev/block/mapper/vendor                    flags=display="Vendor";backup=1;logical;slotselect
+/odm            ext4      /dev/block/mapper/odm                       flags=display="ODM";backup=1;logical;slotselect
 
 # Physical Partitions
 /boot           emmc      /dev/block/bootdevice/by-name/boot          flags=display="Boot";backup=1;slotselect
 /metadata       ext4      /dev/block/bootdevice/by-name/metadata      flags=display="Metadata";backup=1;formattable
-/data           f2fs      /dev/block/bootdevice/by-name/userdata      flags=display="Userdata";backup=1;wipeingui;formattable;latemount;encryptable=footer;checkpoint=fs;reservedsize=128M;sysfs_path=/sys/devices/platform/soc/1d84000.ufshc
+/data           f2fs      /dev/block/bootdevice/by-name/userdata      flags=display="Userdata";backup=1;wipeingui;formattable;encryptable=footer
 /misc           emmc      /dev/block/bootdevice/by-name/misc          flags=display="Misc";backup=1
 
 # Removable Storage
 /sdcard         vfat      /dev/block/mmcblk0p1                        flags=display="Micro SD";storage;wipeingui;removable
-/usb_otg        vfat      /dev/block/sdg1                             flags=display=USB_OTG;storage,wipeingui,removable
+/usb_otg        vfat      /dev/block/sda1                             flags=display="USB OTG";storage;wipeingui;removable

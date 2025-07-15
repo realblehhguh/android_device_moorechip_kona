@@ -55,6 +55,24 @@ on property:ro.boot.usbcontroller=*
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    
+    # Create additional symlinks for physical partitions that don't use bootdevice path
+    # These ensure compatibility between fstab entries and actual device paths
+    symlink /dev/block/sda18 /dev/block/bootdevice/by-name/metadata
+    symlink /dev/block/sda23 /dev/block/bootdevice/by-name/userdata  
+    symlink /dev/block/sda15 /dev/block/bootdevice/by-name/misc
+    
+    # Wait for critical partitions to be available
+    wait /dev/block/sda23 5
+    wait /dev/block/sda18 5
+    wait /dev/block/sda15 5
+    
+    # Set proper permissions for data partition access
+    chmod 0660 /dev/block/sda23
+    chown root system /dev/block/sda23
+    
+    # Ensure bootdevice by-name directory exists
+    mkdir /dev/block/bootdevice/by-name 0755 root root
 
 on boot
     start hwservicemanager
@@ -95,38 +113,38 @@ service servicemanager /system/bin/servicemanager
     writepid /dev/cpuset/system-background/tasks
     shutdown critical
 
-service keymaster-4-0 /vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
+service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service-qti
     user root
     group root drmrpc
     disabled
-    seclabel u:recovery:s0
+    seclabel u:r:recovery:s0
 
-service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
+service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service-qti
     user root
     group root
     disabled
-    seclabel u:recovery:s0
+    seclabel u:r:recovery:s0
 
-service qseecomd /vendor/bin/qseecomd
+service qseecomd /system/bin/qseecomd
     user root
     group root
     disabled
-    seclabel u:recovery:s0
+    seclabel u:r:recovery:s0
 
 # Additional services for proper decryption
-service vendor.keymaster-4-0-qti /vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
+service vendor.keymaster-4-0-qti /system/bin/android.hardware.keymaster@4.0-service-qti
     class early_hal
     user root
     group root drmrpc
     disabled
-    seclabel u:recovery:s0
+    seclabel u:r:recovery:s0
 
-service vendor.gatekeeper-1-0-qti /vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
+service vendor.gatekeeper-1-0-qti /system/bin/android.hardware.gatekeeper@1.0-service-qti
     class early_hal
     user root
     group root
     disabled
-    seclabel u:recovery:s0
+    seclabel u:r:recovery:s0
 
 # Vibrator/Haptics service
 service vibrator-1-0 /system/bin/android.hardware.vibrator@1.0-service
