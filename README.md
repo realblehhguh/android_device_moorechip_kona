@@ -76,26 +76,7 @@ mka recoveryimage
 ```
 
 ## Installation
-
-1. Boot your device into fastboot mode
-2. Flash the recovery image:
-   ```bash
-   fastboot flash recovery out/target/product/kona/recovery.img
-   ```
-3. Reboot to recovery:
-   ```bash
-   fastboot reboot recovery
-   ```
-
-## TWRP Configuration
-
-- **Theme**: Portrait HDPI
-- **Brightness Control**: `/sys/class/backlight/panel0-backlight/brightness`
-- **Max Brightness**: 255
-- **Default Brightness**: 120
-- **Rotation**: 180° (optimized for handheld orientation)
-- **Crypto Support**: PIN, Pattern, Password
-- **Keymaster Version**: 3
+TBD
 
 ## Testing Status
 
