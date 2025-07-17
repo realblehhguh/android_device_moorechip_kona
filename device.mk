@@ -37,6 +37,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
+    
+PRODUCT_COPY_FILES += \
+    device/yourvendor/kona/vendor.prop:system/vendor/vendor.prop
+
 
 # Include vendor blobs locally
 $(call inherit-product, device/moorechip/kona/vendor-blobs.mk)
