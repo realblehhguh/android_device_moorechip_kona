@@ -1,9 +1,6 @@
 # TWRP flags for vendor blob integration
 # This file helps TWRP locate and use vendor blobs properly
 
-# Vendor partition mounting
-/vendor         ext4    vendor                  flags=display=vendor;logical;slotselect
-
 # Vendor blob paths
 /vendor/bin/qseecomd
 /vendor/bin/hw/android.hardware.keymaster@4.0-service-qti

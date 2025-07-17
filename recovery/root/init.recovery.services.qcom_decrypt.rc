@@ -1,5 +1,0 @@
-# Service definitions for QCOM decryption
-# This file contains the service definitions imported by init.recovery.qcom_decrypt.rc
-
-# No additional services needed - all services are defined in the main init files
-# This file exists to satisfy the import statement

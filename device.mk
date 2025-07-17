@@ -33,11 +33,10 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
-
+# crypto 
 PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
-# Crypto and Decryption - Using vendor blobs (defined in vendor blobs)
 
 # Include vendor blobs locally
 $(call inherit-product, device/moorechip/kona/vendor-blobs.mk)

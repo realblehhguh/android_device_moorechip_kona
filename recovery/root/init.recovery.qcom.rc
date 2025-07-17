@@ -24,29 +24,11 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-
 import /init.recovery.qcom_decrypt.rc
-import /init.recovery.usb.rc
-import /init.recovery.mtp.rc
-import /init.recovery.fastbootd.rc
 
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200
     setprop sys.usb.configfs 1
-    setprop prepdecrypt.loglevel 2
-    # Enable vibrator/haptics - QTI haptics on event2
-    chmod 0664 /dev/input/event2
-    chmod 0664 /sys/class/leds/vibrator/activate
-    chmod 0664 /sys/class/leds/vibrator/brightness
-    chmod 0664 /sys/class/leds/vibrator/duration
-    chmod 0664 /sys/class/timed_output/vibrator/enable
-    
-    # Set vibrator permissions - QTI haptics
-    chown system system /dev/input/event2
-    chown system system /sys/class/leds/vibrator/activate
-    chown system system /sys/class/leds/vibrator/brightness
-    chown system system /sys/class/leds/vibrator/duration
-    chown system system /sys/class/timed_output/vibrator/enable
 
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
@@ -55,101 +37,3 @@ on property:ro.boot.usbcontroller=*
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-    
-    # Create additional symlinks for physical partitions that don't use bootdevice path
-    # These ensure compatibility between fstab entries and actual device paths
-    symlink /dev/block/sda18 /dev/block/bootdevice/by-name/metadata
-    symlink /dev/block/sda23 /dev/block/bootdevice/by-name/userdata  
-    symlink /dev/block/sda15 /dev/block/bootdevice/by-name/misc
-    
-    # Wait for critical partitions to be available
-    wait /dev/block/sda23 5
-    wait /dev/block/sda18 5
-    wait /dev/block/sda15 5
-    
-    # Set proper permissions for data partition access
-    chmod 0660 /dev/block/sda23
-    chown root system /dev/block/sda23
-    
-    # Ensure bootdevice by-name directory exists
-    mkdir /dev/block/bootdevice/by-name 0755 root root
-
-on boot
-    start hwservicemanager
-    start servicemanager
-    start qseecomd
-    start keymaster-4-0
-    start gatekeeper-1-0
-    start vibrator-1-0
-    
-    # USB configuration now handled by init.recovery.usb.rc
-
-service hwservicemanager /system/bin/hwservicemanager
-    user root
-    group root readproc
-    critical
-    onrestart setprop hwservicemanager.ready false
-    onrestart class_restart main
-    onrestart class_restart hal
-    onrestart class_restart early_hal
-    writepid /dev/cpuset/system-background/tasks
-    shutdown critical
-
-service servicemanager /system/bin/servicemanager
-    user root
-    group root readproc
-    critical
-    onrestart restart healthd
-    onrestart restart zygote
-    onrestart restart audioserver
-    onrestart restart media
-    onrestart restart surfaceflinger
-    onrestart restart inputflinger
-    onrestart restart drm
-    onrestart restart cameraserver
-    onrestart restart keystore
-    onrestart restart gatekeeperd
-    onrestart restart thermalservice
-    writepid /dev/cpuset/system-background/tasks
-    shutdown critical
-
-service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service-qti
-    user root
-    group root drmrpc
-    disabled
-    seclabel u:r:recovery:s0
-
-service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service-qti
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
-service qseecomd /system/bin/qseecomd
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
-# Additional services for proper decryption
-service vendor.keymaster-4-0-qti /system/bin/android.hardware.keymaster@4.0-service-qti
-    class early_hal
-    user root
-    group root drmrpc
-    disabled
-    seclabel u:r:recovery:s0
-
-service vendor.gatekeeper-1-0-qti /system/bin/android.hardware.gatekeeper@1.0-service-qti
-    class early_hal
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
-# Vibrator/Haptics service
-service vibrator-1-0 /system/bin/android.hardware.vibrator@1.0-service
-    class hal
-    user system
-    group system
-    disabled
-    seclabel u:recovery:s0
