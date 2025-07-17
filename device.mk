@@ -32,7 +32,8 @@ PRODUCT_PACKAGES += \
     cppreopts.sh \
     update_engine \
     update_verifier \
-    update_engine_sideload
+    update_engine_sideload \
+    libapexsupport
 # crypto 
 PRODUCT_PACKAGES += \
     qcom_decrypt \
