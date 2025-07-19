@@ -40,7 +40,7 @@ The easiest way to build TWRP is using GitHub Actions:
 | `COMMON_PATH`        | Common tree location                              | leave empty                                   |
 | `DEVICE_NAME`        | Model name                                        | kona                                                        |
 | `MAKEFILE_NAME`      | Makefile name                                     | twrp_kona                                                   |
-| `BUILD_TARGET`       | Build Target Partition (boot/recovery/vendorboot) | boot                                                     |
+| `BUILD_TARGET`       | Build Target Partition (boot/recovery/vendorboot) | recovery                                                     |
 
 ### Option 2: Local Build
 
