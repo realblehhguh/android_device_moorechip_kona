@@ -86,7 +86,7 @@ Current testing status:
 - [x] Power button (to lock)
 - [ ] Decryption
 - [x] Micro SD/USB-OTG
-- [ ] MTP
+- [x] MTP (kinda..?)
 - [ ] NANDroid backups/restore
 - [ ] ZIP file flashing
 - [ ] IMG file flashing
