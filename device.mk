@@ -39,6 +39,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
+
+# fastbootd
+PRODUCT_PACKAGES += \
+	android.hardware.fastboot@1.0-impl-mock \
+	android.hardware.fastboot@1.0-impl-mock.recovery \
+	fastbootd
     
 PRODUCT_COPY_FILES += \
     device/yourvendor/kona/vendor.prop:system/vendor/vendor.prop

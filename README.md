@@ -99,7 +99,7 @@ Current testing status:
 
 - **SebaUbuntu's TWRP device tree generator** - Initial device tree generation
 - **TeamWin Recovery Project** - TWRP recovery
-
+- **yarpiin** - [Xiaomi Mi 10 DT](https://github.com/yarpiin/twrp_device_xiaomi_umi/tree/android-12.1) (I used some of their code for this device tree)
 ## License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
