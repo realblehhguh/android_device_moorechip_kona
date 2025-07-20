@@ -57,8 +57,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
 	$(LOCAL_PATH)
 
-# Include vendor blobs locally
-$(call inherit-product, device/moorechip/kona/vendor-blobs.mk)
 
 
 
