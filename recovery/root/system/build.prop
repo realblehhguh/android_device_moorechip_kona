@@ -1,0 +1,9 @@
+# Recovery build.prop to prevent missing file errors
+ro.build.version.release=13
+ro.build.version.security_patch=2024-07-05
+ro.vendor.build.security_patch=2024-07-05
+ro.build.version.sdk=33
+ro.hardware.keystore=kona
+ro.hardware.gatekeeper=kona
+vendor.gatekeeper.disable_spu=true
+vendor.qti.scm.disable_mem_protection=1

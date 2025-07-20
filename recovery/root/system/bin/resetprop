@@ -1,0 +1,22 @@
+#!/system/bin/sh
+
+# Simple resetprop replacement for TWRP
+# This script provides basic property setting functionality
+
+if [ $# -lt 2 ]; then
+    echo "Usage: resetprop <property> <value>"
+    exit 1
+fi
+
+PROP="$1"
+VALUE="$2"
+
+# Try to set the property using setprop
+setprop "$PROP" "$VALUE"
+
+# Also try to write to prop files if they exist
+if [ -w "/proc/sys/kernel/random/boot_id" ]; then
+    echo "$VALUE" > "/proc/cmdline" 2>/dev/null || true
+fi
+
+exit 0
