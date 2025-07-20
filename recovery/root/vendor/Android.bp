@@ -10,10 +10,10 @@ cc_prebuilt_binary {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/bin/qseecomd"],
+            srcs: ["bin/qseecomd"],
         },
         android_arm64: {
-            srcs: ["proprietary/bin/qseecomd"],
+            srcs: ["bin/qseecomd"],
         },
     },
     compile_multilib: "prefer32",
@@ -29,10 +29,10 @@ cc_prebuilt_binary {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/bin/thermal-engine"],
+            srcs: ["bin/thermal-engine"],
         },
         android_arm64: {
-            srcs: ["proprietary/bin/thermal-engine"],
+            srcs: ["bin/thermal-engine"],
         },
     },
     compile_multilib: "prefer32",
@@ -48,10 +48,10 @@ cc_prebuilt_binary {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/bin/time_daemon"],
+            srcs: ["bin/time_daemon"],
         },
         android_arm64: {
-            srcs: ["proprietary/bin/time_daemon"],
+            srcs: ["bin/time_daemon"],
         },
     },
     compile_multilib: "prefer32",
@@ -67,10 +67,10 @@ cc_prebuilt_binary {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/bin/hw/android.hardware.bluetooth@1.0-service-qti"],
+            srcs: ["bin/hw/android.hardware.bluetooth@1.0-service-qti"],
         },
         android_arm64: {
-            srcs: ["proprietary/bin/hw/android.hardware.bluetooth@1.0-service-qti"],
+            srcs: ["bin/hw/android.hardware.bluetooth@1.0-service-qti"],
         },
     },
     compile_multilib: "prefer32",
@@ -87,10 +87,10 @@ cc_prebuilt_binary {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/bin/hw/android.hardware.camera.provider@2.4-service_64"],
+            srcs: ["bin/hw/android.hardware.camera.provider@2.4-service_64"],
         },
         android_arm64: {
-            srcs: ["proprietary/bin/hw/android.hardware.camera.provider@2.4-service_64"],
+            srcs: ["bin/hw/android.hardware.camera.provider@2.4-service_64"],
         },
     },
     compile_multilib: "prefer32",
@@ -107,10 +107,10 @@ cc_prebuilt_binary {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/bin/hw/android.hardware.drm@1.3-service.clearkey"],
+            srcs: ["bin/hw/android.hardware.drm@1.3-service.clearkey"],
         },
         android_arm64: {
-            srcs: ["proprietary/bin/hw/android.hardware.drm@1.3-service.clearkey"],
+            srcs: ["bin/hw/android.hardware.drm@1.3-service.clearkey"],
         },
     },
     compile_multilib: "prefer32",
@@ -127,10 +127,10 @@ cc_prebuilt_binary {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/bin/hw/android.hardware.gatekeeper@1.0-service-qti"],
+            srcs: ["bin/hw/android.hardware.gatekeeper@1.0-service-qti"],
         },
         android_arm64: {
-            srcs: ["proprietary/bin/hw/android.hardware.gatekeeper@1.0-service-qti"],
+            srcs: ["bin/hw/android.hardware.gatekeeper@1.0-service-qti"],
         },
     },
     compile_multilib: "prefer32",
@@ -147,10 +147,10 @@ cc_prebuilt_binary {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/bin/hw/android.hardware.keymaster@4.0-service-qti"],
+            srcs: ["bin/hw/android.hardware.keymaster@4.0-service-qti"],
         },
         android_arm64: {
-            srcs: ["proprietary/bin/hw/android.hardware.keymaster@4.0-service-qti"],
+            srcs: ["bin/hw/android.hardware.keymaster@4.0-service-qti"],
         },
     },
     compile_multilib: "prefer32",
@@ -167,10 +167,10 @@ cc_prebuilt_binary {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/bin/hw/android.hardware.sensors@2.0-service.multihal"],
+            srcs: ["bin/hw/android.hardware.sensors@2.0-service.multihal"],
         },
         android_arm64: {
-            srcs: ["proprietary/bin/hw/android.hardware.sensors@2.0-service.multihal"],
+            srcs: ["bin/hw/android.hardware.sensors@2.0-service.multihal"],
         },
     },
     compile_multilib: "prefer32",
@@ -187,10 +187,10 @@ cc_prebuilt_binary {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/bin/hw/android.hardware.thermal@2.0-service.qti"],
+            srcs: ["bin/hw/android.hardware.thermal@2.0-service.qti"],
         },
         android_arm64: {
-            srcs: ["proprietary/bin/hw/android.hardware.thermal@2.0-service.qti"],
+            srcs: ["bin/hw/android.hardware.thermal@2.0-service.qti"],
         },
     },
     compile_multilib: "prefer32",
@@ -207,10 +207,10 @@ cc_prebuilt_binary {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/bin/hw/android.hardware.wifi@1.0-service"],
+            srcs: ["bin/hw/android.hardware.wifi@1.0-service"],
         },
         android_arm64: {
-            srcs: ["proprietary/bin/hw/android.hardware.wifi@1.0-service"],
+            srcs: ["bin/hw/android.hardware.wifi@1.0-service"],
         },
     },
     compile_multilib: "prefer32",
@@ -228,10 +228,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/egl/libEGL_adreno.so"],
+            srcs: ["lib/egl/libEGL_adreno.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/egl/libEGL_adreno.so"],
+            srcs: ["lib64/egl/libEGL_adreno.so"],
         },
     },
     compile_multilib: "both",
@@ -248,10 +248,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/egl/libGLESv2_adreno.so"],
+            srcs: ["lib/egl/libGLESv2_adreno.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/egl/libGLESv2_adreno.so"],
+            srcs: ["lib64/egl/libGLESv2_adreno.so"],
         },
     },
     compile_multilib: "both",
@@ -268,10 +268,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/hw/audio.primary.kona.so"],
+            srcs: ["lib/hw/audio.primary.kona.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/hw/audio.primary.kona.so"],
+            srcs: ["lib64/hw/audio.primary.kona.so"],
         },
     },
     compile_multilib: "both",
@@ -288,10 +288,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/hw/gralloc.kona.so"],
+            srcs: ["lib/hw/gralloc.kona.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/hw/gralloc.kona.so"],
+            srcs: ["lib64/hw/gralloc.kona.so"],
         },
     },
     compile_multilib: "both",
@@ -308,10 +308,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/libdisplayconfig.qti.so"],
+            srcs: ["lib/libdisplayconfig.qti.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/libdisplayconfig.qti.so"],
+            srcs: ["lib64/libdisplayconfig.qti.so"],
         },
     },
     compile_multilib: "both",
@@ -327,10 +327,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/libdrmfs.so"],
+            srcs: ["lib/libdrmfs.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/libdrmfs.so"],
+            srcs: ["lib64/libdrmfs.so"],
         },
     },
     compile_multilib: "both",
@@ -346,10 +346,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/libdrmtime.so"],
+            srcs: ["lib/libdrmtime.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/libdrmtime.so"],
+            srcs: ["lib64/libdrmtime.so"],
         },
     },
     compile_multilib: "both",
@@ -365,10 +365,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/libloc_core.so"],
+            srcs: ["lib/libloc_core.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/libloc_core.so"],
+            srcs: ["lib64/libloc_core.so"],
         },
     },
     compile_multilib: "both",
@@ -384,10 +384,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/libqmi_cci.so"],
+            srcs: ["lib/libqmi_cci.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/libqmi_cci.so"],
+            srcs: ["lib64/libqmi_cci.so"],
         },
     },
     compile_multilib: "both",
@@ -403,10 +403,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/libqmi_common_so.so"],
+            srcs: ["lib/libqmi_common_so.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/libqmi_common_so.so"],
+            srcs: ["lib64/libqmi_common_so.so"],
         },
     },
     compile_multilib: "both",
@@ -422,10 +422,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/libmm-omxcore.so"],
+            srcs: ["lib/libmm-omxcore.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/libmm-omxcore.so"],
+            srcs: ["lib64/libmm-omxcore.so"],
         },
     },
     compile_multilib: "both",
@@ -441,10 +441,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/libqti-perfd-client.so"],
+            srcs: ["lib/libqti-perfd-client.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/libqti-perfd-client.so"],
+            srcs: ["lib64/libqti-perfd-client.so"],
         },
     },
     compile_multilib: "both",
@@ -460,10 +460,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/libperipheral_client.so"],
+            srcs: ["lib/libperipheral_client.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/libperipheral_client.so"],
+            srcs: ["lib64/libperipheral_client.so"],
         },
     },
     compile_multilib: "both",
@@ -479,10 +479,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/libmm-color-convertor.so"],
+            srcs: ["lib/libmm-color-convertor.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/libmm-color-convertor.so"],
+            srcs: ["lib64/libmm-color-convertor.so"],
         },
     },
     compile_multilib: "both",
@@ -498,10 +498,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/libril-qc-hal-qmi.so"],
+            srcs: ["lib/libril-qc-hal-qmi.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/libril-qc-hal-qmi.so"],
+            srcs: ["lib64/libril-qc-hal-qmi.so"],
         },
     },
     compile_multilib: "both",
@@ -517,10 +517,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/librilutils.so"],
+            srcs: ["lib/librilutils.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/librilutils.so"],
+            srcs: ["lib64/librilutils.so"],
         },
     },
     compile_multilib: "both",
@@ -536,10 +536,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/libthermalclient.so"],
+            srcs: ["lib/libthermalclient.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/libthermalclient.so"],
+            srcs: ["lib64/libthermalclient.so"],
         },
     },
     compile_multilib: "both",
@@ -555,10 +555,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/libtime_genoff.so"],
+            srcs: ["lib/libtime_genoff.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/libtime_genoff.so"],
+            srcs: ["lib64/libtime_genoff.so"],
         },
     },
     compile_multilib: "both",
@@ -574,10 +574,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/lib/libwpa_client.so"],
+            srcs: ["lib/libwpa_client.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/lib64/libwpa_client.so"],
+            srcs: ["lib64/libwpa_client.so"],
         },
     },
     compile_multilib: "both",
