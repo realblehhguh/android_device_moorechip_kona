@@ -11,14 +11,6 @@ PRODUCT_PACKAGES += \
     qseecomd \
     thermal-engine \
     time_daemon \
-    android.hardware.bluetooth@1.0-service-qti \
-    android.hardware.camera.provider@2.4-service_64 \
-    android.hardware.drm@1.3-service.clearkey \
-    android.hardware.gatekeeper@1.0-service-qti \
-    android.hardware.keymaster@4.0-service-qti \
-    android.hardware.sensors@2.0-service.multihal \
-    android.hardware.thermal@2.0-service.qti \
-    android.hardware.wifi@1.0-service \
     libEGL_adreno \
     libGLESv2_adreno \
     audio.primary.kona \
