@@ -15,8 +15,6 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Inherit from kona device
 $(call inherit-product, device/moorechip/kona/device.mk)
 
-# Include vendor blobs for TWRP locally
-$(call inherit-product, device/moorechip/kona/vendor-blobs.mk)
 
 PRODUCT_DEVICE := kona
 PRODUCT_NAME := twrp_kona
