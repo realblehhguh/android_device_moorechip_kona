@@ -3,3 +3,4 @@ ro.hardware.keystore=kona
 ro.hardware.gatekeeper=kona
 vendor.gatekeeper.disable_spu=true
 vendor.qti.scm.disable_mem_protection=1
+keymaster_ver=4
