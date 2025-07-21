@@ -9,7 +9,7 @@
 # Physical Partitions
 /boot           emmc      /dev/block/bootdevice/by-name/boot          flags=display="Boot";backup=1;slotselect
 /metadata       ext4      /dev/block/bootdevice/by-name/metadata      flags=display="Metadata";backup=1;formattable
-/data           f2fs      /dev/block/bootdevice/by-name/userdata      flags=display="Userdata";backup=1;wipeingui;formattable;encryptable=/dev/block/bootdevice/by-name/metadata,wrappedkey,keydirectory=/metadata/vold/metadata_encryption
+/data           f2fs      /dev/block/bootdevice/by-name/userdata      flags=display="Userdata";backup=1;wipeingui;formattable;encryptable=/dev/block/bootdevice/by-name/metadata,wrappedkey,keydirectory=/metadata/vold/metadata_encryption;fileencryption=aes-256-xts:aes-256-cts
 /misc           emmc      /dev/block/bootdevice/by-name/misc          flags=display="Misc";backup=1
 
 # Removable Storage
