@@ -1,17 +1,43 @@
-# mount point   fstype    device                                      flags
-# Logical Partitions (Dynamic Partitions)
-/system         ext4      /dev/block/mapper/system                    flags=display="System";backup=1;logical;slotselect
-/system_ext     ext4      /dev/block/mapper/system_ext                flags=display="System Ext";backup=1;logical;slotselect
-/product        ext4      /dev/block/mapper/product                   flags=display="Product";backup=1;logical;slotselect
-/vendor         ext4      /dev/block/mapper/vendor                    flags=display="Vendor";backup=1;logical;slotselect
-/odm            ext4      /dev/block/mapper/odm                       flags=display="ODM";backup=1;logical;slotselect
+#<mount point>  <fstype>    <device>                                                                  <flags>
+#================================================================================================================================================================
+#
+# !! This fstab is for a virtual_ab_device with File-Based Encryption (FBE) !!
+#
 
-# Physical Partitions
-/boot           emmc      /dev/block/bootdevice/by-name/boot          flags=display="Boot";backup=1;slotselect
-/metadata       ext4      /dev/block/bootdevice/by-name/metadata      flags=display="Metadata";backup=1;formattable
-/data           f2fs      /dev/block/bootdevice/by-name/userdata      flags=display="Userdata";backup=1;wipeingui;formattable;encryptable=/dev/block/bootdevice/by-name/metadata,wrappedkey,keydirectory=/metadata/vold/metadata_encryption;fileencryption=aes-256-xts:aes-256-cts;latemount
-/misc           emmc      /dev/block/bootdevice/by-name/misc          flags=display="Misc";backup=1
+# Boot & Recovery Partitions (A/B)
+/boot              emmc        /dev/block/by-name/boot                                                   flags=slotselect;backup=1
+/init_boot         emmc        /dev/block/by-name/init_boot                                              flags=slotselect;backup=1;display="Init Boot"
+/vendor_boot       emmc        /dev/block/by-name/vendor_boot                                            flags=slotselect;backup=1;display="Vendor Boot"
+/recovery          emmc        /dev/block/by-name/recovery                                               flags=slotselect;backup=0;display="Recovery"
 
-# Removable Storage
-/sdcard         vfat      /dev/block/mmcblk0p1                        flags=display="Micro SD";storage;wipeingui;removable
-/usb_otg        vfat      /dev/block/sda1                             flags=display="USB OTG";storage;wipeingui;removable
+# User Data Partition (f2fs with FBE)
+/data              f2fs        /dev/block/by-name/userdata                                               flags=backup=1;formattable;fileencryption=aes-256-xts:aes-256-cts:v2;latemount
+# Super Partition and its Logical Contents (A/B)
+# Note: The device path is the partition name from lpdump (without _a/_b)
+/system_root       ext4        system                                                                    flags=logical;slotselect;backup=1;wipeingui;display="System"
+/system_ext        ext4        system_ext                                                                flags=logical;slotselect;backup=1;wipeingui;display="System Ext"
+/product           ext4        product                                                                   flags=logical;slotselect;backup=1;wipeingui;display="Product"
+/vendor            ext4        vendor                                                                    flags=logical;slotselect;backup=1;wipeingui;display="Vendor"
+/odm               ext4        odm                                                                       flags=logical;slotselect;backup=1;wipeingui;display="ODM"
+
+# It's good practice to list the super partition itself for wiping purposes
+/super             emmc        /dev/block/by-name/super                                                  flags=backup=0;wipeingui;display="Super"
+
+# Other Important Partitions
+/metadata          ext4        /dev/block/by-name/metadata                                               flags=backup=1;formattable
+/persist           ext4        /dev/block/by-name/persist                                                flags=backup=1;display="Persist"
+/misc              emmc        /dev/block/by-name/misc                                                   flags=backup=0
+
+# Firmware Partitions (A/B) - Recommended for full backups
+/modem             emmc        /dev/block/by-name/modem                                                  flags=slotselect;backup=1;display="Modem"
+/bluetooth         emmc        /dev/block/by-name/bluetooth                                              flags=slotselect;backup=1;display="Bluetooth"
+/dsp               emmc        /dev/block/by-name/dsp                                                    flags=slotselect;backup=1;display="DSP"
+/dtbo              emmc        /dev/block/by-name/dtbo                                                   flags=slotselect;backup=1;display="DTBO"
+
+# VBMeta Partitions (A/B) - Critical for verified boot
+/vbmeta            emmc        /dev/block/by-name/vbmeta                                                 flags=slotselect;backup=1;display="VBMeta"
+/vbmeta_system     emmc        /dev/block/by-name/vbmeta_system                                          flags=slotselect;backup=1;display="VBMeta System"
+
+# External Storage (Uncomment the one you need)
+/external_sd     auto        /dev/block/mmcblk1p1       /dev/block/mmcblk1                           flags=storage;wipeingui;removable;display="MicroSD Card"
+/usb-otg           auto        /dev/block/sdg1            /dev/block/sdg                               flags=storage;wipeingui;removable;display="USB OTG"
