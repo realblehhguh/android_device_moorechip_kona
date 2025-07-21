@@ -25,19 +25,16 @@
 
 The easiest way to build TWRP is using GitHub Actions:
 
-1. Visit https://github.com/azwhikaru/Action-TWRP-Builder and fork the repository
+1. Visit https://github.com/CaptainThrowback/Action-Recovery-Builder and fork the repository
 2. Go to Actions and press "Run Workflow"
 3. Fill in these options:
 
 | Name                 | Description                                       | Value                                                      |
 | -------------------- | ------------------------------------------------- | ------------------------------------------------------------ |
-| `MANIFEST_URL`       | Source address (don't change)                    | https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git |
-| `MANIFEST_BRANCH`    | Source branch (don't change)                     | twrp-12.1                                                    |
+| `MANIFEST_BRANCH`    | Source branch (don't change)                     | 12.1                                                    |
 | `DEVICE_TREE_URL`    | Device address                                   | https://github.com/TWRP-for-Retroid-Pocket-5/android_device_moorechip_kona |
 | `DEVICE_TREE_BRANCH` | Device branch                                     | android-13                                                |
 | `DEVICE_PATH`        | Device location                                   | device/moorechip/kona                                            |
-| `COMMON_TREE_URL`    | Common tree address                               | leave empty |
-| `COMMON_PATH`        | Common tree location                              | leave empty                                   |
 | `DEVICE_NAME`        | Model name                                        | kona                                                        |
 | `MAKEFILE_NAME`      | Makefile name                                     | twrp_kona                                                   |
 | `BUILD_TARGET`       | Build Target Partition (boot/recovery/vendorboot) | recovery                                                     |
