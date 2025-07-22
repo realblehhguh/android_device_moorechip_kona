@@ -1,1 +1,143 @@
-# TBD
+# Proprietary files for moorechip kona (Retroid Pocket 5)
+# This list includes essential proprietary blobs needed for TWRP functionality
+
+# Keymaster / Gatekeeper (for decryption support)
+vendor/lib64/hw/android.hardware.keymaster@4.0-impl-qti.so
+vendor/lib64/hw/android.hardware.keymaster@4.1-impl-qti.so
+vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
+vendor/lib64/libkeymasterdeviceutils.so
+vendor/lib64/libkeymasterprovision.so
+vendor/lib64/libkeymasterutils.so
+vendor/lib64/libqtikeymaster4.so
+vendor/lib64/libQTEEConnector_system.so
+
+# Keymaster 32-bit
+vendor/lib/hw/android.hardware.keymaster@4.0-impl-qti.so
+vendor/lib/hw/android.hardware.keymaster@4.1-impl-qti.so
+vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
+vendor/lib/libkeymasterdeviceutils.so
+vendor/lib/libkeymasterprovision.so
+vendor/lib/libkeymasterutils.so
+vendor/lib/libqtikeymaster4.so
+vendor/lib/libQTEEConnector_system.so
+
+# Qualcomm TEE (Trusted Execution Environment)
+vendor/lib64/libQSEEComAPI.so
+vendor/lib64/libdrmfs.so
+vendor/lib64/libdrmtime.so
+vendor/lib64/libGPreqcancel.so
+vendor/lib64/libGPreqcancel_svc.so
+vendor/lib64/libqisl.so
+vendor/lib64/librpmb.so
+vendor/lib64/libssd.so
+vendor/lib64/libStDrvInt.so
+vendor/lib64/libtime_genoff.so
+
+# Qualcomm TEE 32-bit
+vendor/lib/libQSEEComAPI.so
+vendor/lib/libdrmfs.so
+vendor/lib/libdrmtime.so
+vendor/lib/libGPreqcancel.so
+vendor/lib/libGPreqcancel_svc.so
+vendor/lib/libqisl.so
+vendor/lib/librpmb.so
+vendor/lib/libssd.so
+vendor/lib/libStDrvInt.so
+vendor/lib/libtime_genoff.so
+
+# Firmware files
+vendor/firmware/a650_gmu.bin
+vendor/firmware/a650_sqe.fw
+vendor/firmware/adsp.mbn
+vendor/firmware/cdsp.mbn
+vendor/firmware/modem.mbn
+vendor/firmware/slpi.mbn
+vendor/firmware/tz.mbn
+vendor/firmware/hyp.mbn
+vendor/firmware/abl.elf
+vendor/firmware/xbl.elf
+vendor/firmware/xbl_config.elf
+
+# Qualcomm common
+vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti-util.so
+vendor/lib64/libqti-at.so
+vendor/lib64/libqti-gt.so
+
+# Boot control HAL
+vendor/lib64/hw/bootctrl.kona.so
+vendor/lib/hw/bootctrl.kona.so
+
+# Fastboot HAL
+vendor/lib64/hw/android.hardware.fastboot@1.0-impl-qti.so
+vendor/lib/hw/android.hardware.fastboot@1.0-impl-qti.so
+
+# Health HAL
+vendor/lib64/hw/android.hardware.health@2.1-impl-qti.so
+vendor/lib/hw/android.hardware.health@2.1-impl-qti.so
+
+# USB HAL
+vendor/lib64/hw/android.hardware.usb@1.0-impl-qti.so
+vendor/lib/hw/android.hardware.usb@1.0-impl-qti.so
+
+# Thermal HAL
+vendor/lib64/hw/android.hardware.thermal@2.0-impl-qti.so
+vendor/lib/hw/android.hardware.thermal@2.0-impl-qti.so
+
+# Power HAL
+vendor/lib64/hw/android.hardware.power@1.2-impl-qti.so
+vendor/lib/hw/android.hardware.power@1.2-impl-qti.so
+
+# Vibrator HAL
+vendor/lib64/hw/android.hardware.vibrator@1.0-impl-qti.so
+vendor/lib/hw/android.hardware.vibrator@1.0-impl-qti.so
+
+# Graphics (minimal for recovery)
+vendor/lib64/egl/libEGL_adreno.so
+vendor/lib64/egl/libGLESv1_CM_adreno.so
+vendor/lib64/egl/libGLESv2_adreno.so
+vendor/lib64/libC2D2.so
+vendor/lib64/libc2d30-a3xx.so
+vendor/lib64/libCB.so
+vendor/lib64/libgsl.so
+vendor/lib64/libllvm-glnext.so
+vendor/lib64/libllvm-qcom.so
+vendor/lib64/libOpenCL.so
+vendor/lib64/librs_adreno.so
+vendor/lib64/librs_adreno_sha1.so
+vendor/lib64/libRSDriver_adreno.so
+
+# Graphics 32-bit
+vendor/lib/egl/libEGL_adreno.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
+vendor/lib/egl/libGLESv2_adreno.so
+vendor/lib/libC2D2.so
+vendor/lib/libc2d30-a3xx.so
+vendor/lib/libCB.so
+vendor/lib/libgsl.so
+vendor/lib/libllvm-glnext.so
+vendor/lib/libllvm-qcom.so
+vendor/lib/libOpenCL.so
+vendor/lib/librs_adreno.so
+vendor/lib/librs_adreno_sha1.so
+vendor/lib/libRSDriver_adreno.so
+
+# Qualcomm utilities
+vendor/bin/qseecomd
+vendor/bin/time_daemon
+vendor/bin/thermal-engine
+vendor/bin/adsprpcd
+vendor/bin/cdsprpcd
+vendor/bin/irsc_util
+
+# Additional libraries for TWRP functionality
+vendor/lib64/libion.so
+vendor/lib/libion.so
+vendor/lib64/libqdutils.so
+vendor/lib/libqdutils.so
+vendor/lib64/libqservice.so
+vendor/lib/libqservice.so
+
+# Encryption support
+vendor/lib64/libcryptfs_hw.so
+vendor/lib/libcryptfs_hw.so
