@@ -1,10 +1,14 @@
 # TWRP Device Tree for Retroid Pocket 5
+> [!WARNING]
+> Decryption doesnt work. If you know a thing about handling about Qualcomm decryption, consider making a pull request. Or contact me on discord listed on my github profile. Thanks!
+
 > [!IMPORTANT]
 > - This device uses A/B (Dynamic Partitions).
 > - MTP doesnt work.
 > - Unable to flash TWRP at the moment.
-> - Decryption doesnt work.
 > - FastbootD doesnt work.
+
+
 
 ## Device Information
 
