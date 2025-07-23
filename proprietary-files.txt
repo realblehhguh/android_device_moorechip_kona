@@ -1,99 +1,143 @@
-# Bin
-system/bin/android.hardware.gatekeeper@1.0-service-qti
-system/bin/android.hardware.keymaster@4.0-service-qti
-system/bin/qseecomd
+# Proprietary files for moorechip kona (Retroid Pocket 5)
+# This list includes essential proprietary blobs needed for TWRP functionality
 
-# Lib64
-system/lib64/android.hardware.gatekeeper@1.0.so
-system/lib64/android.hardware.keymaster@3.0.so
-system/lib64/android.hardware.keymaster@4.0.so
-system/lib64/android.hardware.keymaster@4.1.so
-system/lib64/ld-android.so
-system/lib64/libandroidicu.so
-system/lib64/libbase.so
-system/lib64/libc.so
-system/lib64/libc++.so
-system/lib64/libcgrouprc.so
-system/lib64/libcrypto.so
-system/lib64/libcutils.so
-system/lib64/libdl_android.so
-system/lib64/libdl.so
-system/lib64/libhardware.so
-system/lib64/libhidlbase.so
-system/lib64/libicui18n.so
-system/lib64/libicuuc.so
-system/lib64/libion.so
-system/lib64/liblog.so
-system/lib64/libm.so
-system/lib64/libprocessgroup.so
-system/lib64/libutils.so
-system/lib64/libvndksupport.so
-system/lib64/libxml2.so
+# Keymaster / Gatekeeper (for decryption support)
+vendor/lib64/hw/android.hardware.keymaster@4.0-impl-qti.so
+vendor/lib64/hw/android.hardware.keymaster@4.1-impl-qti.so
+vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
+vendor/lib64/libkeymasterdeviceutils.so
+vendor/lib64/libkeymasterprovision.so
+vendor/lib64/libkeymasterutils.so
+vendor/lib64/libqtikeymaster4.so
+vendor/lib64/libQTEEConnector_system.so
 
-# Vendor Lib
-vendor/lib/libdiag.so
-vendor/lib/libdisplayconfig.qti.so
-vendor/lib/libdrmfs.so
-vendor/lib/libdrmtime.so
+# Keymaster 32-bit
+vendor/lib/hw/android.hardware.keymaster@4.0-impl-qti.so
+vendor/lib/hw/android.hardware.keymaster@4.1-impl-qti.so
+vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib/libkeymasterdeviceutils.so
+vendor/lib/libkeymasterprovision.so
 vendor/lib/libkeymasterutils.so
-vendor/lib/libloc_core.so
-vendor/lib/libmm-color-convertor.so
-vendor/lib/libmm-omxcore.so
-vendor/lib/libperipheral_client.so
-vendor/lib/libqcbor.so
-vendor/lib/libqmi_cci.so
-vendor/lib/libqmi_common_so.so
-vendor/lib/libQSEEComAPI.so
-vendor/lib/libqti-perfd-client.so
 vendor/lib/libqtikeymaster4.so
-vendor/lib/libril-qc-hal-qmi.so
-vendor/lib/librilutils.so
-vendor/lib/libspcom.so
-vendor/lib/libthermalclient.so
-vendor/lib/libtime_genoff.so
-vendor/lib/libwpa_client.so
+vendor/lib/libQTEEConnector_system.so
 
-# Vendor Lib64
-vendor/lib64/libdiag.so
-vendor/lib64/libdisplayconfig.qti.so
+# Qualcomm TEE (Trusted Execution Environment)
+vendor/lib64/libQSEEComAPI.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
-vendor/lib64/libkeymasterdeviceutils.so
-vendor/lib64/libkeymasterutils.so
-vendor/lib64/libloc_core.so
-vendor/lib64/libmm-color-convertor.so
-vendor/lib64/libmm-omxcore.so
-vendor/lib64/libperipheral_client.so
-vendor/lib64/libqcbor.so
-vendor/lib64/libqmi_cci.so
-vendor/lib64/libqmi_common_so.so
-vendor/lib64/libQSEEComAPI.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqtikeymaster4.so
-vendor/lib64/libril-qc-hal-qmi.so
-vendor/lib64/librilutils.so
-vendor/lib64/libspcom.so
-vendor/lib64/libthermalclient.so
+vendor/lib64/libGPreqcancel.so
+vendor/lib64/libGPreqcancel_svc.so
+vendor/lib64/libqisl.so
+vendor/lib64/librpmb.so
+vendor/lib64/libssd.so
+vendor/lib64/libStDrvInt.so
 vendor/lib64/libtime_genoff.so
-vendor/lib64/libwpa_client.so
 
-# Vendor Bin
-vendor/bin/thermal-engine
-vendor/bin/time_daemon
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
-vendor/bin/hw/android.hardware.camera.provider@2.4-service_64
-vendor/bin/hw/android.hardware.drm@1.3-service.clearkey
-vendor/bin/hw/android.hardware.sensors@2.0-service.multihal
-vendor/bin/hw/android.hardware.thermal@2.0-service.qti
-vendor/bin/hw/android.hardware.wifi@1.0-service
+# Qualcomm TEE 32-bit
+vendor/lib/libQSEEComAPI.so
+vendor/lib/libdrmfs.so
+vendor/lib/libdrmtime.so
+vendor/lib/libGPreqcancel.so
+vendor/lib/libGPreqcancel_svc.so
+vendor/lib/libqisl.so
+vendor/lib/librpmb.so
+vendor/lib/libssd.so
+vendor/lib/libStDrvInt.so
+vendor/lib/libtime_genoff.so
 
-# Vendor Etc
-vendor/etc/audio_policy_configuration.xml
-vendor/etc/mixer_paths.xml
-vendor/etc/thermal-engine.conf
-
-# Vendor Firmware
+# Firmware files
 vendor/firmware/a650_gmu.bin
 vendor/firmware/a650_sqe.fw
-vendor/firmware/slpi.mdt
+vendor/firmware/adsp.mbn
+vendor/firmware/cdsp.mbn
+vendor/firmware/modem.mbn
+vendor/firmware/slpi.mbn
+vendor/firmware/tz.mbn
+vendor/firmware/hyp.mbn
+vendor/firmware/abl.elf
+vendor/firmware/xbl.elf
+vendor/firmware/xbl_config.elf
+
+# Qualcomm common
+vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti-util.so
+vendor/lib64/libqti-at.so
+vendor/lib64/libqti-gt.so
+
+# Boot control HAL
+vendor/lib64/hw/bootctrl.kona.so
+vendor/lib/hw/bootctrl.kona.so
+
+# Fastboot HAL
+vendor/lib64/hw/android.hardware.fastboot@1.0-impl-qti.so
+vendor/lib/hw/android.hardware.fastboot@1.0-impl-qti.so
+
+# Health HAL
+vendor/lib64/hw/android.hardware.health@2.1-impl-qti.so
+vendor/lib/hw/android.hardware.health@2.1-impl-qti.so
+
+# USB HAL
+vendor/lib64/hw/android.hardware.usb@1.0-impl-qti.so
+vendor/lib/hw/android.hardware.usb@1.0-impl-qti.so
+
+# Thermal HAL
+vendor/lib64/hw/android.hardware.thermal@2.0-impl-qti.so
+vendor/lib/hw/android.hardware.thermal@2.0-impl-qti.so
+
+# Power HAL
+vendor/lib64/hw/android.hardware.power@1.2-impl-qti.so
+vendor/lib/hw/android.hardware.power@1.2-impl-qti.so
+
+# Vibrator HAL
+vendor/lib64/hw/android.hardware.vibrator@1.0-impl-qti.so
+vendor/lib/hw/android.hardware.vibrator@1.0-impl-qti.so
+
+# Graphics (minimal for recovery)
+vendor/lib64/egl/libEGL_adreno.so
+vendor/lib64/egl/libGLESv1_CM_adreno.so
+vendor/lib64/egl/libGLESv2_adreno.so
+vendor/lib64/libC2D2.so
+vendor/lib64/libc2d30-a3xx.so
+vendor/lib64/libCB.so
+vendor/lib64/libgsl.so
+vendor/lib64/libllvm-glnext.so
+vendor/lib64/libllvm-qcom.so
+vendor/lib64/libOpenCL.so
+vendor/lib64/librs_adreno.so
+vendor/lib64/librs_adreno_sha1.so
+vendor/lib64/libRSDriver_adreno.so
+
+# Graphics 32-bit
+vendor/lib/egl/libEGL_adreno.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
+vendor/lib/egl/libGLESv2_adreno.so
+vendor/lib/libC2D2.so
+vendor/lib/libc2d30-a3xx.so
+vendor/lib/libCB.so
+vendor/lib/libgsl.so
+vendor/lib/libllvm-glnext.so
+vendor/lib/libllvm-qcom.so
+vendor/lib/libOpenCL.so
+vendor/lib/librs_adreno.so
+vendor/lib/librs_adreno_sha1.so
+vendor/lib/libRSDriver_adreno.so
+
+# Qualcomm utilities
+vendor/bin/qseecomd
+vendor/bin/time_daemon
+vendor/bin/thermal-engine
+vendor/bin/adsprpcd
+vendor/bin/cdsprpcd
+vendor/bin/irsc_util
+
+# Additional libraries for TWRP functionality
+vendor/lib64/libion.so
+vendor/lib/libion.so
+vendor/lib64/libqdutils.so
+vendor/lib/libqdutils.so
+vendor/lib64/libqservice.so
+vendor/lib/libqservice.so
+
+# Encryption support
+vendor/lib64/libcryptfs_hw.so
+vendor/lib/libcryptfs_hw.so
