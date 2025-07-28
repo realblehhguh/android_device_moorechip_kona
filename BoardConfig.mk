@@ -27,7 +27,6 @@ AB_OTA_PARTITIONS += \
     system_ext \
     vendor \
     product
-BOARD_USES_RECOVERY_AS_BOOT := false
 
 # Architecture
 TARGET_ARCH := arm64
@@ -113,7 +112,6 @@ VENDOR_SECURITY_PATCH := 2024-07-05
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
-TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
@@ -137,7 +135,6 @@ TW_USE_FSCRYPT_POLICY := 2
 TW_DEVICE_VERSION := A13-RP5
 TW_NO_FLASH_CURRENT_TWRP := true
 TWRP_INCLUDE_LOGCAT := true
-TW_FORCE_KEYMASTER_VER := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 TW_EXCLUDE_APEX := true
 TW_INCLUDE_RESETPROP := true
