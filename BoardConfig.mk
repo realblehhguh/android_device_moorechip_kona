@@ -28,6 +28,9 @@ AB_OTA_PARTITIONS += \
     vendor \
     product
 
+# to use TWRP module loader code for vendor_boot module loading.
+TW_LOAD_VENDOR_BOOT_MODULES := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -105,13 +108,15 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno650
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 
-# Security patch level
-VENDOR_SECURITY_PATCH := 2024-07-05
+# Security Patch
+PLATFORM_SECURITY_PATCH := 2099-12-31
+VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
+TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
@@ -127,11 +132,10 @@ TW_HAS_EDL_MODE := true
 TW_INCLUDE_FASTBOOTD := true
 TW_INCLUDE_MTP := true
 TW_MTP_DEVICE := "/config/usb_gadget/g1"
-TW_INCLUDE_CRYPTO_FBE := true
+#TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_CRYPTO := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 BOARD_USES_QCOM_HARDWARE := true
-TW_USE_FSCRYPT_POLICY := 2
 TW_DEVICE_VERSION := A13-RP5
 TW_NO_FLASH_CURRENT_TWRP := true
 TWRP_INCLUDE_LOGCAT := true
@@ -142,5 +146,4 @@ TW_INCLUDE_LIBRESETPROP := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 # Vendor blob paths
-PRODUCT_VENDOR_MOVE_ENABLED := true
-TARGET_COPY_OUT_VENDOR := vendor
+#PRODUCT_VENDOR_MOVE_ENABLED := true
